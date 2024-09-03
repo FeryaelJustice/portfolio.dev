@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import Badge from "../components/Badge.astro";
 import Linkedin from "../components/icons/Linkedin.astro";
 import Github from "../components/icons/Github.astro";
 import Mail from "../components/icons/Linkedin.astro";
+import BriefCase from "../components/icons/BriefCase.astro";
 import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
 ---
 
 <Layout
@@ -12,7 +15,7 @@ import SocialPill from "../components/SocialPill.astro";
   description="Hire FeryaelJustice to create your mobile or web app. Web / Mobile Developer. Specialized in creating amazing unique apps."
 >
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+    <SectionContainer class="py-44 pb-24">
       <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
         Hey, I am FeryaelJustice <a
           href="https://www.linkedin.com/in/feryael-justice/"
@@ -41,6 +44,11 @@ import SocialPill from "../components/SocialPill.astro";
           <Mail class="size-6" />fgonzalezserrano10@gmail.com
         </SocialPill>
       </nav>
-    </section>
+    </SectionContainer>
+
+    <SectionContainer>
+		<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center"><BriefCase class="size-6"/> Experiencia laboral</h2>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>

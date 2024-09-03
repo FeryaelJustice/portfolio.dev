@@ -1,0 +1,32 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "February 2024 - August 2024",
+    title: "Fullstack Web Developer",
+    company: "Homerti",
+    description:
+      "Developed and maintained internal web applications using Laravel, Vue.js, and TailwindCSS. Managed incidents and resolved tickets, working with tools like Node.js, GitKraken, Bitbucket, Trello, and Inertia.js.",
+    link: "https://www.homerti.com",
+  },
+  {
+    date: "May 2022 - August 2022",
+    title: "Software Developer",
+    company: "Tec-Soft",
+    description:
+      "Developed enterprise desktop software using Delphi and tools like PDFBuilder. Collaborated on projects to improve the efficiency and functionality of internal systems.",
+      link: "https://www.tec-soft.com",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
