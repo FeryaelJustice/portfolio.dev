@@ -24,8 +24,10 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Add host to known_hosts
-      run: ssh-keyscan -p ${{ env.PORT }} ${{ env.HOST }} >> ~/.ssh/known_hosts
+    - name: Create .ssh directory and add host to known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -p ${{ env.PORT }} ${{ env.HOST }} >> ~/.ssh/known_hosts
 
     - name: Deploy to Hostinger via SSH
       env:
