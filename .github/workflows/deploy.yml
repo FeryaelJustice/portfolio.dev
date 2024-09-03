@@ -24,8 +24,15 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+    - name: Deploy to Hostinger via SSH
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        HOST: feryaeljustice.dev
+        USERNAME: u406592625
+        TARGET_DIR: /home/u406592625/domains/feryaeljustice.dev/public_html
+
+      run: |
+        echo "$SSH_PRIVATE_KEY" > private_key.pem
+        chmod 600 private_key.pem
+        rsync -avz -e "ssh -i private_key.pem" dist/ $USERNAME@$HOST:$TARGET_DIR
+        rm private_key.pem
