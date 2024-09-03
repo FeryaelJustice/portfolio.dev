@@ -29,10 +29,11 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         HOST: feryaeljustice.dev
         USERNAME: u406592625
+        PORT: 65002
         TARGET_DIR: /home/u406592625/domains/feryaeljustice.dev/public_html
 
       run: |
         echo "$SSH_PRIVATE_KEY" > private_key.pem
         chmod 600 private_key.pem
-        rsync -avz -e "ssh -i private_key.pem" dist/ $USERNAME@$HOST:$TARGET_DIR
+        rsync -avz -e "ssh -i private_key.pem -p 65002" dist/ $USERNAME@$HOST:$TARGET_DIR
         rm private_key.pem
