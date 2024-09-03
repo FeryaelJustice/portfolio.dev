@@ -1,10 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Linkedin from "../components/icons/Linkedin.astro";
+import Github from "../components/icons/Github.astro";
+import Mail from "../components/icons/Linkedin.astro";
+import SocialPill from "../components/SocialPill.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Porfolio</h1>
-	</main>
+<Layout
+  title="Portfolio of FeryaelJustice - Mobile / Web Developer and Programmer with 1 year of experience"
+  description="Hire FeryaelJustice to create your mobile or web app. Web / Mobile Developer. Specialized in creating amazing unique apps."
+>
+  <main>
+    <section class="w-full lg:w-[740px] mx-auto py-44">
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+        Hey, I am FeryaelJustice <a
+          href="https://www.linkedin.com/in/feryael-justice/"
+          rel="noopener"
+          target="_blank"
+          class="flex justify-center items-center"
+          ><Badge>Available to work</Badge></a
+        >
+      </h1>
+      <h2 class="text-2xl opacity-80 text-wrap">
+        <span>+1 year of experience.</span>
+        <span class="text-yellow-200/90">Mobile / Web Developer.</span>
+        <span class="text-red-100/90">From Mallorca, Spain 🇪🇸.</span>
+        <span class="opacity-75">Specialized in Android Apps and Frontend.</span
+        >
+      </h2>
+
+      <nav class="flex gap-x-4 mt-8">
+        <SocialPill href="https://www.linkedin.com/in/feryael-justice">
+          <Linkedin class="size-6" />LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/FeryaelJustice">
+          <Github class="size-6" />Github
+        </SocialPill>
+        <SocialPill href="mailto:fgonzalezserrano10@gmail.com">
+          <Mail class="size-6" />fgonzalezserrano10@gmail.com
+        </SocialPill>
+      </nav>
+    </section>
+  </main>
 </Layout>
