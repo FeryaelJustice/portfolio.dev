@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import NextJS from "./icons/NextJS.astro";
 import TailwindCSS from "./icons/TailwindCSS.astro";
 
@@ -43,10 +44,13 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
-      <img
+      <Image
         class="rounded shadow-2l shadow-white/10 mb-4"
         src={image}
         alt={`Screenshot of project ${image}`}
+        width="300"
+        height="200"
+        loading="lazy"
       />
     </article>
   ))
