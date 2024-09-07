@@ -6,10 +6,12 @@ import Badge from "../components/Badge.astro";
 import Linkedin from "../components/icons/Linkedin.astro";
 import Github from "../components/icons/Github.astro";
 import Mail from "../components/icons/Mail.astro";
+import AboutMe from "../components/AboutMe.astro"
 import BriefCase from "../components/icons/BriefCase.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import Code from "../components/icons/Code.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro"
 import Projects from "../components/Projects.astro";
 ---
 
@@ -18,7 +20,7 @@ import Projects from "../components/Projects.astro";
   description="Hire FeryaelJustice to create your mobile or web app. Web / Mobile Developer. Specialized in creating amazing unique apps."
 >
   <main class="px-4">
-    <SectionContainer class="py-32 pb-32">
+    <SectionContainer class="py-16 md:py-36">
       <Image
         class="rounded-full mb-4"
         src="https://avatars.githubusercontent.com/u/47835172?s=400&u=7bd211a55a2104fbb3abb9e5d6172f8a233180bf&v=4"
@@ -61,7 +63,7 @@ import Projects from "../components/Projects.astro";
 
     <SectionContainer id="experience">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <BriefCase class="size-6" /> Experience
+        <BriefCase class="size-8" /> Experience
       </h2>
       <Experience />
     </SectionContainer>
@@ -75,14 +77,9 @@ import Projects from "../components/Projects.astro";
 
     <SectionContainer id="about">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Code class="size-7" /> About Me
+        <ProfileCheck  class="size-8" /> About Me
       </h2>
-    </SectionContainer>
-
-    <SectionContainer id="contact">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Code class="size-7" /> Contact
-      </h2>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>
