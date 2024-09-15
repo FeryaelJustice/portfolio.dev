@@ -1,17 +1,29 @@
 ---
 import { Image } from "astro:assets";
+import JSIcon from "./icons/JSIcon.astro";
 import Github from "./icons/Github.astro";
 import NextJS from "./icons/NextJS.astro";
+import ReactIcon from "./icons/React.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import TailwindCSS from "./icons/TailwindCSS.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
+  JSIcon: {
+    name: "JS",
+    class: "bg-black text-white",
+    icon: JSIcon,
+  },
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
     icon: NextJS,
+  },
+  REACTICON: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: ReactIcon,
   },
   ASTROICON: {
     name: "Astro",
@@ -31,7 +43,7 @@ const PROJECTS = [
     link: "https://blanchedalmond-shark-422521.hostingersite.com/",
     github: "https://github.com/FeryaelJustice/HotelAuraDeMallorca",
     image: "/projects/hotelaurademallorca.webp",
-    tags: [TAGS.TAILWIND, TAGS.ASTROICON],
+    tags: [TAGS.REACTICON, TAGS.JSIcon],
   },
   {
     title: "Portfolio",
