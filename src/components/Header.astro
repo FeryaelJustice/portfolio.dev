@@ -1,23 +1,75 @@
 ---
+const { currentLocale } = Astro;
 const navItems = [
   {
-    title: "Experience",
-    label: "experience",
-    url: "/#experience",
+    title:
+      currentLocale == "en"
+        ? "Experience"
+        : currentLocale == "es"
+          ? "Experiencia"
+          : "",
+    label:
+      currentLocale == "en"
+        ? "experience"
+        : currentLocale == "es"
+          ? "experiencia"
+          : "",
+    url:
+      currentLocale == "en"
+        ? "#experience"
+        : currentLocale == "es"
+          ? "es#experience"
+          : "",
   },
   {
-    title: "Projects",
-    label: "projects",
-    url: "/#projects",
+    title:
+      currentLocale == "en"
+        ? "Projects"
+        : currentLocale == "es"
+          ? "Proyectos"
+          : "",
+    label:
+      currentLocale == "en"
+        ? "projects"
+        : currentLocale == "es"
+          ? "proyectos"
+          : "",
+    url:
+      currentLocale == "en"
+        ? "#projects"
+        : currentLocale == "es"
+          ? "es#projects"
+          : "",
   },
   {
-    title: "About me",
-    label: "about",
-    url: "/#about",
+    title:
+      currentLocale == "en"
+        ? "About me"
+        : currentLocale == "es"
+          ? "Sobre mí"
+          : "",
+    label:
+      currentLocale == "en" ? "about" : currentLocale == "es" ? "sobremi" : "",
+    url:
+      currentLocale == "en"
+        ? "#about"
+        : currentLocale == "es"
+          ? "es#about"
+          : "",
   },
   {
-    title: "Contact",
-    label: "contact",
+    title:
+      currentLocale == "en"
+        ? "Contact"
+        : currentLocale == "es"
+          ? "Contacto"
+          : "",
+    label:
+      currentLocale == "en"
+        ? "contact"
+        : currentLocale == "es"
+          ? "contacto"
+          : "",
     url: "mailto:fgonzalezserrano10@gmail.com",
   },
 ];

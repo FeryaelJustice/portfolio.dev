@@ -1,3 +1,7 @@
+---
+const { currentLocale } = Astro;
+---
+
 <footer
   class="rounded-lg shadow m-4 bg-black/20 backdrop-blur-lg w-full xl:w-[1120px] mx-auto mb-10"
 >
@@ -13,14 +17,56 @@
       class="flex flex-wrap items-center mt-3 text-sm font-medium text-white/90 sm:mt-0"
     >
       <li>
-        <a href="#experience" class="hover:underline me-4 md:me-6">Experience</a
+        <a
+          href={currentLocale == "en"
+            ? "#experience"
+            : currentLocale == "es"
+              ? "es#experience"
+              : ""}
+          class="hover:underline me-4 md:me-6"
+        >
+          {
+            currentLocale == "en"
+              ? "Experience"
+              : currentLocale == "es"
+                ? "Experiencia"
+                : ""
+          }
+        </a>
+      </li>
+      <li>
+        <a
+          href={currentLocale == "en"
+            ? "#projects"
+            : currentLocale == "es"
+              ? "es#projects"
+              : ""}
+          class="hover:underline me-4 md:me-6"
+          >{
+            currentLocale == "en"
+              ? "Projects"
+              : currentLocale == "es"
+                ? "Proyectos"
+                : ""
+          }</a
         >
       </li>
       <li>
-        <a href="#projects" class="hover:underline me-4 md:me-6">Projects</a>
-      </li>
-      <li>
-        <a href="#about" class="hover:underline me-4 md:me-6">About</a>
+        <a
+          href={currentLocale == "en"
+            ? "#about"
+            : currentLocale == "es"
+              ? "es#about"
+              : ""}
+          class="hover:underline me-4 md:me-6"
+          >{
+            currentLocale == "en"
+              ? "About"
+              : currentLocale == "es"
+                ? "Sobre mí"
+                : ""
+          }</a
+        >
       </li>
     </ul>
   </div>

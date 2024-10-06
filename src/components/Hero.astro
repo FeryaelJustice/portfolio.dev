@@ -1,4 +1,6 @@
 ---
+const { lang } = Astro.props;
+
 const personalImageAlt = "Feryael Justice";
 import { Image } from "astro:assets";
 import Badge from "./Badge.astro";
@@ -23,25 +25,57 @@ import SocialPill from "./SocialPill.astro";
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Available to work</Badge>
+      <Badge
+        >{
+          lang == "en"
+            ? "Available to work"
+            : lang == "es"
+              ? "Disponible para trabajar"
+              : ""
+        }</Badge
+      >
     </a>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight sm:text-5xl text-white"
-  >
-    Hey, I am Feryael Justice
+  <h1 class="text-4xl font-bold tracking-tight sm:text-5xl text-white">
+    {
+      lang == "en"
+        ? "Hey, I am Feryael Justice"
+        : lang == "es"
+          ? "Hey, soy Feryael Justice"
+          : ""
+    }
   </h1>
   <p
     class="mt-6 text-xl [&>strong]:text-yellow-200 [&>strong]:font-semibold text-gray-300"
   >
-    <span class="text-yellow-200/90"><em>Junior</em> Mobile / Web Developer.</span>
-    <span class="text-red-100/90">From Mallorca, Spain 🇪🇸.</span>
-    <span class="opacity-75">Specialized in Android Apps and Frontend.</span>
+    <span class="text-yellow-200/90"
+      ><em>Junior</em>
+      {
+        lang == "en"
+          ? "Mobile / Web Developer"
+          : lang == "es"
+            ? "Desarrollador Móvil / Web"
+            : ""
+      } .</span
+    >
+    <span class="text-red-100/90"
+      >{lang == "en" ? "From" : lang == "es" ? "De" : ""} Mallorca, Spain 🇪🇸.</span
+    >
+    <span class="opacity-75">
+      {
+        lang == "en"
+          ? "Specialized in Android Apps and Frontend"
+          : lang == "es"
+            ? "Especializado en Apps Android y Frontend"
+            : ""
+      }
+      .</span
+    >
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:fgonzalezserrano10@gmail.com">
       <Mail class="size-4" />
-      Contact me
+      {lang == "en" ? "Contact me" : lang == "es" ? "Contáctame" : ""}
     </SocialPill>
     <SocialPill href="https://linkedin.com/in/feryael-justice">
       <Linkedin class="size-4" />
