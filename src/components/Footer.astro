@@ -17,14 +17,7 @@ const { currentLocale } = Astro;
       class="flex flex-wrap items-center mt-3 text-sm font-medium text-white/90 sm:mt-0"
     >
       <li>
-        <a
-          href={currentLocale == "en"
-            ? "#experience"
-            : currentLocale == "es"
-              ? "es#experience"
-              : ""}
-          class="hover:underline me-4 md:me-6"
-        >
+        <a href="#experience" class="hover:underline me-4 md:me-6">
           {
             currentLocale == "en"
               ? "Experience"
@@ -35,13 +28,7 @@ const { currentLocale } = Astro;
         </a>
       </li>
       <li>
-        <a
-          href={currentLocale == "en"
-            ? "#projects"
-            : currentLocale == "es"
-              ? "es#projects"
-              : ""}
-          class="hover:underline me-4 md:me-6"
+        <a href="#projects" class="hover:underline me-4 md:me-6"
           >{
             currentLocale == "en"
               ? "Projects"
@@ -52,13 +39,7 @@ const { currentLocale } = Astro;
         >
       </li>
       <li>
-        <a
-          href={currentLocale == "en"
-            ? "#about"
-            : currentLocale == "es"
-              ? "es#about"
-              : ""}
-          class="hover:underline me-4 md:me-6"
+        <a href="#about" class="hover:underline me-4 md:me-6"
           >{
             currentLocale == "en"
               ? "About"
