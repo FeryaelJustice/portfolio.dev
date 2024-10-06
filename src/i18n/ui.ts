@@ -11,7 +11,7 @@ export const ui = {
         'nav.about': 'About',
         'nav.twitter': 'Twitter',
     },
-    fr: {
+    es: {
         'nav.home': 'Accueil',
         'nav.about': 'À propos',
     },

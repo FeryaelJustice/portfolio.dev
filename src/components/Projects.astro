@@ -10,6 +10,9 @@ import TailwindCSS from "./icons/TailwindCSS.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
+import { getLangFromUrl } from "../i18n/utils";
+const currentLocale = getLangFromUrl(Astro.url);
+
 const TAGS = {
   JSIcon: {
     name: "JS",
@@ -40,7 +43,12 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Hotel Aura de Mallorca",
-    description: "(NEEDS VPS FOR BACKEND AND DB FUNCTIONALITY) Hotel website (in React and Express JS) with extra services for the complexity of implementing a weather API that tells you based on the local weather when you book if you can book or not.",
+    description:
+      currentLocale == "en"
+        ? "(NEEDS VPS FOR BACKEND AND DB FUNCTIONALITY) Hotel website (in React and Express JS) with extra services for the complexity of implementing a weather API that tells you based on the local weather when you book if you can book or not."
+        : currentLocale == "es"
+          ? "(NECESITA VPS PARA FUNCIONALIDAD DE BACKEND Y DB) Sitio web de hotel (en React y Express JS) con servicios adicionales para la complejidad de implementar una API meteorológica que te indica, en función del clima local, cuando haces la reserva, si puedes reservar o no."
+          : "",
     link: "https://blanchedalmond-shark-422521.hostingersite.com/",
     github: "https://github.com/FeryaelJustice/HotelAuraDeMallorca",
     image: "/projects/hotelaurademallorca.webp",
@@ -48,7 +56,12 @@ const PROJECTS = [
   },
   {
     title: "Portfolio",
-    description: "Professional Portfolio of Feryael Justice, showcasing his projects, experience and best achievements.",
+    description:
+      currentLocale == "en"
+        ? "Professional Portfolio of Feryael Justice, showcasing his projects, experience and best achievements."
+        : currentLocale == "es"
+          ? "Portafolio Profesional de Feryael Justice, mostrando sus proyectos, experiencia y mejores logros."
+          : "",
     link: "https://feryaeljustice.dev/",
     github: "https://github.com/feryaeljustice/portfolio.dev",
     image: "/projects/portfolio.webp",
@@ -95,13 +108,21 @@ const PROJECTS = [
               {github && (
                 <LinkButton href={github}>
                   <Github class="size-6" />
-                  Code
+                  {currentLocale == "en"
+                    ? "Code"
+                    : currentLocale == "es"
+                      ? "Código"
+                      : ""}
                 </LinkButton>
               )}
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Preview
+                  {currentLocale == "en"
+                    ? "Preview"
+                    : currentLocale == "es"
+                      ? "Previsualización"
+                      : ""}
                 </LinkButton>
               )}
             </footer>

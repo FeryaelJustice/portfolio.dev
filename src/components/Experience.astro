@@ -1,33 +1,53 @@
 ---
-const { lang } = Astro.props;
 import ExperienceItem from "./ExperienceItem.astro";
+
+import { getLangFromUrl } from "../i18n/utils";
+const currentLocale = getLangFromUrl(Astro.url);
 
 const EXPERIENCE = [
   {
-    date: "February 2024 - August 2024",
+    date:
+      currentLocale == "en"
+        ? "February 2024 - August 2024"
+        : currentLocale == "es"
+          ? "Febrero 2024 - Agosto 2024"
+          : "",
     title: "Fullstack Web Developer",
     company: "Homerti",
     description:
-      "Developed and maintained internal web applications using Laravel, Vue.js, and TailwindCSS. Managed incidents and resolved tickets, working with tools like Node.js, GitKraken, Bitbucket, Trello, and Inertia.js.",
+      currentLocale == "en"
+        ? "Developed and maintained internal web applications using Laravel, Vue.js, and TailwindCSS. Managed incidents and resolved tickets, working with tools like Node.js, GitKraken, Bitbucket, Trello, and Inertia.js."
+        : currentLocale == "es"
+          ? "Desarrollé y mantuve aplicaciones web internas utilizando Laravel, Vue.js y TailwindCSS. Gestioné incidentes y resolví tickets, trabajando con herramientas como Node.js, GitKraken, Bitbucket, Trello e Inertia.js."
+          : "",
     link: "https://www.homerti.com",
   },
   {
-    date: "May 2022 - August 2022",
+    date:
+      currentLocale == "en"
+        ? "May 2022 - August 2022"
+        : currentLocale == "es"
+          ? "Mayo 2022 - Agosto 2022"
+          : "",
     title: "Software Developer",
     company: "Tec-Soft",
     description:
-      "Developed enterprise desktop software using Delphi and tools like PDFBuilder. Collaborated on projects to improve the efficiency and functionality of internal systems.",
-      link: "https://www.tec-soft.com",
-    },
+      currentLocale == "en"
+        ? "Developed enterprise desktop software using Delphi and tools like PDFBuilder. Collaborated on projects to improve the efficiency and functionality of internal systems."
+        : currentLocale == "es"
+          ? "Desarrollé software de escritorio empresarial utilizando Delphi y herramientas como PDFBuilder. Colaboré en proyectos para mejorar la eficiencia y la funcionalidad de los sistemas internos."
+          : "",
+    link: "https://www.tec-soft.com",
+  },
 ];
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
-    {
-        EXPERIENCE.map(experience => (
-            <li class="mb-10 ms-4">
-                <ExperienceItem {...experience} />
-            </li>
-        ))
-    }
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
 </ol>

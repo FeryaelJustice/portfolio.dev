@@ -1,37 +1,102 @@
 ---
-const { lang } = Astro.props;
 const personalImageAlt = "Fernando GS";
+
+import { getLangFromUrl } from "../i18n/utils";
+const currentLocale = getLangFromUrl(Astro.url);
 ---
 
 <article
-  class="flex flex-col items-center justify-center gap-8 text-gray-300 md:flex-row "
+  class="flex flex-col items-center justify-center gap-8 text-gray-300 md:flex-row"
 >
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
-      My name is Fernando Gonzalez Serrano, but my friends call me Feryael. I
-      started programming when I was 15, exploring web development and desktop
-      software. My last job is: <strong
-        >Fullstack Web Developer</strong
-      > at Homerti, a vacation rental company, where I help maintain internal web
-      applications and resolve technical issues.
+      {
+        currentLocale == "en"
+          ? "My name is Fernando Gonzalez Serrano, but my friends call me Feryael. I started programming when I was 15, exploring web development and desktop software. My last job is: "
+          : currentLocale == "es"
+            ? "Mi nombre es Fernando Gonzalez Serrano, pero mis amigos me llaman Feryael. Comencé a programar cuando tenía 15 años, explorando el desarrollo web y de software de escritorio. Mi último trabajo es: "
+            : ""
+      }<strong
+        >{
+          currentLocale == "en"
+            ? "Fullstack Web Developer"
+            : currentLocale == "es"
+              ? "Desarrollador Fullstack Web"
+              : ""
+        }</strong
+      >{
+        currentLocale == "en"
+          ? "at Homerti, a vacation rental company, where I help maintain internal web applications and resolve technical issues."
+          : currentLocale == "es"
+            ? "en Homerti, una empresa de alquiler vacacional, donde ayudo a mantener aplicaciones web internas y a resolver problemas técnicos."
+            : ""
+      }
     </p>
 
     <p>
-      Some of my achievements include <strong
-        >developing desktop enterprise software at Tec-Soft, using Delphi and
-        tools like PDFBuilder</strong
-      >. Additionally, I have experience working with technologies such as <strong
-        >Laravel, Vue.js, Node.js, and TailwindCSS,</strong
-      > which I use daily to ensure the smooth operation of our platforms at Homerti.
+      {
+        currentLocale == "en"
+          ? "Some of my achievements include"
+          : currentLocale == "es"
+            ? "Algunos de mis logros incluyen:"
+            : ""
+      }
+      <strong>
+        {
+          currentLocale == "en"
+            ? "developing desktop enterprise software at Tec-Soft, using Delphi and tools like PDFBuilder"
+            : currentLocale == "es"
+              ? "desarrollo de software empresarial de escritorio en Tec-Soft, utilizando Delphi y herramientas como PDFBuilder"
+              : ""
+        }</strong
+      >.
+      {
+        currentLocale == "en"
+          ? "Additionally, I have experience working with technologies such as "
+          : currentLocale == "es"
+            ? "Además, tengo experiencia trabajando con tecnologías como "
+            : ""
+      }
+      <strong
+        >Laravel, Vue.js, Node.js {
+          currentLocale == "en" ? "and" : currentLocale == "es" ? "y" : "and"
+        } TailwindCSS,</strong
+      >
+      {
+        currentLocale == "en"
+          ? "which I use daily to ensure the smooth operation of our platforms at Homerti."
+          : currentLocale == "es"
+            ? "que utilizo diariamente para garantizar el buen funcionamiento de nuestras plataformas en Homerti."
+            : ""
+      }
     </p>
 
     <p>
-      As a developer, my passion lies in <span class="italic">
-        efficient, secure, and scalable applications</span
-      >. My aim is to continue growing in the tech industry, focusing on
-      improving my skills and contributing to impactful projects.
+      {
+        currentLocale == "en"
+          ? "As a developer, my passion lies in "
+          : currentLocale == "es"
+            ? "Como desarrollador, mi pasión radica en "
+            : ""
+      }
+      <span class="italic"
+        >{
+          currentLocale == "en"
+            ? "creating efficient, secure, and scalable applications"
+            : currentLocale == "es"
+              ? "crear aplicaciones eficientes, seguras y escalables"
+              : ""
+        }</span
+      >.
+      {
+        currentLocale == "en"
+          ? "My aim is to continue growing in the tech industry, focusing on improving my skills and contributing to impactful projects."
+          : currentLocale == "es"
+            ? "Mi objetivo es seguir creciendo en la industria tecnológica, centrándome en mejorar mis habilidades y contribuir a proyectos impactantes."
+            : ""
+      }
     </p>
   </div>
 
