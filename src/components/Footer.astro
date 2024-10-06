@@ -1,5 +1,6 @@
 ---
 const { currentLocale } = Astro;
+const year = new Date().getFullYear()
 ---
 
 <footer
@@ -9,7 +10,7 @@ const { currentLocale } = Astro;
     class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
   >
     <span class="text-sm sm:text-center text-yellow-200/90"
-      >© 2024 <a href="https://feryaeljustice.dev/" class="hover:underline"
+      >&copy; {year} <a href="https://feryaeljustice.dev/" class="hover:underline"
         >Feryael Justice</a
       >.
     </span>
