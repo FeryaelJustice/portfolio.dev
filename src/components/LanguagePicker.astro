@@ -1,0 +1,15 @@
+---
+import { languages } from "../i18n/ui";
+---
+
+<ul class="ml-3 mr-2 flex flex-col font-extrabold text-[#9E9EFF]">
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li
+        class="transition duration-100 hover:scale-110 hover:text-amber-700"
+      >
+        <a href={lang != 'en' ? `/${lang}/` : `/`}>{label}</a>
+      </li>
+    ))
+  }
+</ul>

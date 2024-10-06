@@ -1,4 +1,5 @@
 ---
+import LanguagePicker from './LanguagePicker.astro';
 const { currentLocale } = Astro;
 const navItems = [
   {
@@ -77,6 +78,7 @@ const navItems = [
         </a>
       ))
     }
+    <LanguagePicker />
   </nav>
 </header>
 
@@ -130,7 +132,7 @@ const navItems = [
   }
 
   nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
+    @apply dark:bg-gray-800/90 bg-[#1C1C1C];
   }
 
   @keyframes nav-shadown {
