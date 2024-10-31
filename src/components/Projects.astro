@@ -54,18 +54,29 @@ const PROJECTS = [
     tags: [TAGS.REACTICON, TAGS.JSIcon],
   },
   {
-    title: "Portfolio",
+    title: "Feryael Dev (Dev Youtuber)",
     description:
       currentLocale == "en"
-        ? "Professional Portfolio of Feryael Justice, showcasing his projects, experience and best achievements."
+        ? "Programming channel showcasing Mobile projects and knowledge about different Android topics."
         : currentLocale == "es"
-          ? "Portafolio Profesional de Feryael Justice, mostrando sus proyectos, experiencia y mejores logros."
+          ? "Canal de programación exhibiendo proyectos móviles y conocimiento sobre diferentes temas de Android."
           : "",
-    link: "https://feryaeljustice.dev/",
-    github: "https://github.com/feryaeljustice/portfolio.dev",
-    image: "/projects/portfolio.webp",
-    tags: [TAGS.TAILWIND, TAGS.ASTROICON],
+    link: "https://www.youtube.com/@feryaeldev",
+    image: "/projects/feryaeldev.webp",
   },
+  // {
+  //   title: "Portfolio",
+  //   description:
+  //     currentLocale == "en"
+  //       ? "Professional Portfolio of Feryael Justice, showcasing his projects, experience and best achievements."
+  //       : currentLocale == "es"
+  //         ? "Portafolio Profesional de Feryael Justice, mostrando sus proyectos, experiencia y mejores logros."
+  //         : "",
+  //   link: "https://feryaeljustice.dev/",
+  //   github: "https://github.com/feryaeljustice/portfolio.dev",
+  //   image: "/projects/portfolio.webp",
+  //   tags: [TAGS.TAILWIND, TAGS.ASTROICON],
+  // },
 ];
 ---
 
@@ -90,7 +101,7 @@ const PROJECTS = [
           <h3 class="text-2xl font-bold text-gray-100">{title}</h3>
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
+              {tags?.map((tag) => (
                 <li>
                   <span
                     class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
