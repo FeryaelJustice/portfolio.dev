@@ -62,10 +62,10 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mt-2 mx-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center border-2 border-white border-opacity-20"
+    class="flex flex-col sm:flex-row px-3 text-xs sm:text-sm font-medium rounded-lg sm:rounded-full text-gray-200 justify-center items-center border-2 border-white border-opacity-20"
   >
     {
       navItems.map((link) => (
@@ -76,9 +76,14 @@ const navItems = [
         >
           {link.title}
         </a>
+        <hr class="bg-white w-full h-0.5 sm:hidden">
       ))
     }
+    <br class="sm:hidden">
     <LanguagePicker />
+    <br class="sm:hidden">
+    <hr class="bg-white w-full h-0.5 sm:hidden">
+    <br class="sm:hidden">
   </nav>
 </header>
 

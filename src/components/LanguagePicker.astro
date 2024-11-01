@@ -1,5 +1,6 @@
 ---
 import { languages } from "@i18n/ui";
+const { currentLocale } = Astro;
 ---
 
 <ul class="ml-3 mr-2 flex flex-col font-extrabold text-[#9E9EFF]">
@@ -8,7 +9,7 @@ import { languages } from "@i18n/ui";
       <li
         class="transition duration-100 hover:scale-110 hover:text-amber-700"
       >
-        <a href={lang != 'en' ? `/${lang}/` : `/`}>{label}</a>
+        <a href={lang != 'en' ? `/${lang}/` : `/`} class=`${currentLocale === lang ? "text-[#FF8A8A] underline" : "text-[#9XE9EFF]"}`>{label}</a>
       </li>
     ))
   }
