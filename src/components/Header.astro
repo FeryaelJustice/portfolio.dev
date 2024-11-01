@@ -156,7 +156,7 @@ id="header"
     window.addEventListener("scroll", handleScroll);
 
      // Función para manejar el clic en un enlace de anclaje
-     window.handleNavClick = () => {
+     (window as any)["handleNavClick"] = function() {
       setTimeout(() => {
         header?.classList.add("-translate-y-full");
         header?.classList.remove("mt-2");
