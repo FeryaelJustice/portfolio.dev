@@ -62,7 +62,8 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mt-2 mx-2"
+id="header"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mt-2 mx-2 transition-transform duration-300"
 >
   <nav
     class="flex flex-col sm:flex-row px-3 text-xs sm:text-sm font-medium rounded-lg sm:rounded-full text-gray-200 justify-center items-center border-2 border-white border-opacity-20"
@@ -73,6 +74,7 @@ const navItems = [
           class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
           aria-label={link.label}
           href={link.url}
+          onclick="handleNavClick()"
         >
           {link.title}
         </a>
@@ -89,6 +91,7 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
+    // Intersection Observer
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("header nav a");
 
@@ -125,6 +128,39 @@ const navItems = [
           observer.observe(section);
         });
       }
+    };
+
+    
+    // Scroll hide observer
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById("header");
+
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        header?.classList.add("-translate-y-full");
+        header?.classList.remove("mt-2");
+      } else {
+        header?.classList.remove("-translate-y-full");
+        header?.classList.add("mt-2");
+      }
+      lastScrollY = window.scrollY;
+
+      // Mostrar el header nuevamente cuando esté en el top
+      if (window.scrollY === 0) {
+        header?.classList.remove("-translate-y-full");
+        header?.classList.add("mt-2");
+      }
+    };
+
+    // Escuchar el evento de scroll
+    window.addEventListener("scroll", handleScroll);
+
+     // Función para manejar el clic en un enlace de anclaje
+     window.handleNavClick = () => {
+      setTimeout(() => {
+        header?.classList.add("-translate-y-full");
+        header?.classList.remove("mt-2");
+      }, 10);
     };
   });
 </script>
