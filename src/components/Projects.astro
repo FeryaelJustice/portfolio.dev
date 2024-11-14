@@ -6,6 +6,8 @@ import NextJS from "./icons/NextJS.astro";
 import ReactIcon from "./icons/React.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import TailwindCSS from "./icons/TailwindCSS.astro";
+import Android from "./icons/Android.astro";
+import Kotlin from "./icons/Kotlin.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -38,8 +40,31 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: TailwindCSS,
   },
+  ANDROID: {
+    name: "Android",
+    class: "bg-[#003159] text-white",
+    icon: Android,
+  },
+  KOTLIN: {
+    name: "Kotlin",
+    class: "bg-[#003159] text-white",
+    icon: Kotlin,
+  },
 };
 const PROJECTS = [
+  {
+    title: "Super News App (Android)",
+    description:
+      currentLocale == "en"
+        ? "Your favourite news app made with Jetpack Compose, MVVM, Hilt, Version Catalog, SOLID, Retrofit (API Calls) and more."
+        : currentLocale == "es"
+          ? "Tu aplicación de noticias favorita creada con Jetpack Compose, MVVM, Hilt, Version Catalog, SOLID, Retrofit (llamadas API) y más."
+          : "",
+    link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.supernewsapp",
+    github: "https://github.com/FeryaelJustice/SuperNewsApp",
+    image: "/projects/supernewsapp.webp",
+    tags: [TAGS.ANDROID, TAGS.KOTLIN],
+  },
   {
     title: "Hotel Aura de Mallorca",
     description:

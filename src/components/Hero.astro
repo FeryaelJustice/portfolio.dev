@@ -82,7 +82,7 @@ import SocialPill from "./SocialPill.astro";
       <Linkedin class="size-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="cv.pdf">
+    <SocialPill href={lang == "en" ? "cv.pdf" : lang == "es" ? "../cv.pdf" : "cv.pdf"}>
       <CV class="size-4" />
       CV
     </SocialPill>
