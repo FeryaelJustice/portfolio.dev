@@ -5,6 +5,7 @@ const personalImageAlt = "Feryael Justice";
 import { Image } from "astro:assets";
 import Badge from "./Badge.astro";
 import Linkedin from "./icons/Linkedin.astro";
+import Github from "./icons/Github.astro";
 import Mail from "./icons/Mail.astro";
 import CV from "./icons/CV.astro";
 import SocialPill from "./SocialPill.astro";
@@ -74,13 +75,17 @@ import SocialPill from "./SocialPill.astro";
     >
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:fgonzalezserrano10@gmail.com">
+    <SocialPill href="mailto:nano9gs@hotmail.es">
       <Mail class="size-4" />
-      {lang == "en" ? "Contact me" : lang == "es" ? "Contáctame" : ""}
+      {lang == "en" ? "Mail" : lang == "es" ? "Correo" : ""}
     </SocialPill>
     <SocialPill href="https://linkedin.com/in/feryael-justice">
       <Linkedin class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/FeryaelJustice">
+      <Github class="size-4" />
+      Github
     </SocialPill>
     <SocialPill href={lang == "en" ? "cv.pdf" : lang == "es" ? "../cv.pdf" : "cv.pdf"}>
       <CV class="size-4" />

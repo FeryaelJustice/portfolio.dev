@@ -1,11 +1,12 @@
 ---
 export interface Props {
   title: string;
+  company: string;
   description: string;
   link?: string;
   date: string;
 }
-const { title, description, link, date } = Astro.props;
+const { title, company, description, link, date } = Astro.props;
 import { getLangFromUrl } from '@i18n/utils';
 const currentLocale = getLangFromUrl(Astro.url);
 ---
@@ -21,6 +22,9 @@ const currentLocale = getLangFromUrl(Astro.url);
 <h3 class="text-lg font-semibold text-yellow-200 mt-2">
   {title}
 </h3>
+<h5 class="text-sm font-bold text-[#9999FF] mt-1 mb-1">
+  {company}
+</h5>
 <p class="mb-4 text-base font-normal text-gray-200 text-pretty">
   {description}
 </p>
