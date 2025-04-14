@@ -5,66 +5,83 @@ import { getLangFromUrl } from "@i18n/utils";
 const currentLocale = getLangFromUrl(Astro.url);
 
 const EXPERIENCE = [
-  {
-    date:
-      currentLocale == "en"
-        ? "December 2024 - Current"
-        : currentLocale == "es"
-          ? "Diciembre 2024 - Actual"
-          : "",
-    title: "Android Developer",
-    company: "Exis TI",
-    description:
-      currentLocale == "en"
-        ? "Working daily with NTTData as outsourced on an Android App with all the team in Jetpack Compose, Hilt, Clean Architecture..."
-        : currentLocale == "es"
-          ? "Trabajando diariamente con NTTData como outsourcing en una aplicación Android con todo el equipo en Jetpack Compose, Hilt, Clean Architecture..."
-          : "",
-    link: "https://www.exis-ti.com/",
-  },
-  {
-    date:
-      currentLocale == "en"
-        ? "February 2024 - August 2024"
-        : currentLocale == "es"
-          ? "Febrero 2024 - Agosto 2024"
-          : "",
-    title: "Fullstack Web Developer",
-    company: "Homerti",
-    description:
-      currentLocale == "en"
-        ? "Developed and maintained internal web applications using Laravel, Vue.js, and TailwindCSS. Managed incidents and resolved tickets, working with tools like Node.js, GitKraken, Bitbucket, Trello, and Inertia.js."
-        : currentLocale == "es"
-          ? "Desarrollé y mantuve aplicaciones web internas utilizando Laravel, Vue.js y TailwindCSS. Gestioné incidentes y resolví tickets, trabajando con herramientas como Node.js, GitKraken, Bitbucket, Trello e Inertia.js."
-          : "",
-    link: "https://www.homerti.com",
-  },
-  {
-    date:
-      currentLocale == "en"
-        ? "May 2022 - August 2022"
-        : currentLocale == "es"
-          ? "Mayo 2022 - Agosto 2022"
-          : "",
-    title: "Software Developer",
-    company: "Tec-Soft",
-    description:
-      currentLocale == "en"
-        ? "Developed enterprise desktop software using Delphi and tools like PDFBuilder. Collaborated on projects to improve the efficiency and functionality of internal systems."
-        : currentLocale == "es"
-          ? "Desarrollé software de escritorio empresarial utilizando Delphi y herramientas como PDFBuilder. Colaboré en proyectos para mejorar la eficiencia y la funcionalidad de los sistemas internos."
-          : "",
-    link: "https://www.tec-soft.com",
-  },
+    {
+        date:
+            currentLocale == "en"
+                ? "April 2025 - Current"
+                : currentLocale == "es"
+                  ? "April 2025 - Actual"
+                  : "",
+        title: "Android Developer",
+        company: "Exis TI",
+        description:
+            currentLocale == "en"
+                ? "Computer consultant focused on Android programming."
+                : currentLocale == "es"
+                  ? "Consultor informático especializado en programación Android."
+                  : "",
+        link: "https://www.exis-ti.com/",
+    },
+    {
+        date:
+            currentLocale == "en"
+                ? "December 2024 - March 2025"
+                : currentLocale == "es"
+                  ? "Diciembre 2024 - March 2025"
+                  : "",
+        title: "Android Developer (Junior)",
+        company: "Exis TI",
+        description:
+            currentLocale == "en"
+                ? "Collaborated on a banking app with NTTData. Developed 5+ new features using Kotlin, Jetpack Compose, Hilt, MVVM, and Retrofit. Implemented secure builds with Proguard/Dexguard."
+                : currentLocale == "es"
+                  ? "Colaboré en una aplicación bancaria con NTTData. Desarrollé más de cinco nuevas funcionalidades con Kotlin, Jetpack Compose, Hilt, MVVM y Retrofit. Implementé compilaciones seguras con Proguard/Dexguard."
+                  : "",
+        link: "https://www.exis-ti.com/",
+    },
+    {
+        date:
+            currentLocale == "en"
+                ? "February 2024 - August 2024"
+                : currentLocale == "es"
+                  ? "Febrero 2024 - Agosto 2024"
+                  : "",
+        title: "Fullstack Web Developer",
+        company: "Homerti",
+        description:
+            currentLocale == "en"
+                ? "Maintained and developed internal web products using Laravel and Vue.js. Worked in an Agile team using Bitbucket for version control. From September of 2023 to December of 2023 did an internship of higher vocational training."
+                : currentLocale == "es"
+                  ? "Mantuve y desarrollé productos web internos con Laravel y Vue.js. Trabajé en un equipo ágil con Bitbucket para el control de versiones. De septiembre a diciembre de 2023, realicé prácticas profesionales de formación superior."
+                  : "",
+        link: "https://www.homerti.com",
+    },
+    {
+        date:
+            currentLocale == "en"
+                ? "May 2022 - August 2022"
+                : currentLocale == "es"
+                  ? "Mayo 2022 - Agosto 2022"
+                  : "",
+        title: "Software Developer",
+        company: "Tec-Soft",
+        description:
+            currentLocale == "en"
+                ? "Developed enterprise software in Delphi Seattle for desktop environments."
+                : currentLocale == "es"
+                  ? "Desarrollé software empresarial en Delphi Seattle para entornos de escritorio."
+                  : "",
+        link: "https://www.tec-soft.com",
+    },
 ];
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="mb-10 ms-4">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
 </ol>
