@@ -7,7 +7,7 @@ Visit it live here: [https://feryaeljustice.dev](https://feryaeljustice.dev)
 ## 🛠️ Tech Stack
 
 - **Astro** – Static site generator with blazing fast performance
-- **Tailwind** – For styling
+- **Tailwind** – For styling (updating to Tailwing 4 crashes it all, migrate)
 - **Responsive Design** – Mobile-friendly and fully responsive
 
 ## 📁 Project Structure

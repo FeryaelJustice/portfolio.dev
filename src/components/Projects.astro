@@ -53,6 +53,19 @@ const TAGS = {
 };
 const PROJECTS = [
   {
+    title: "Super Snake Game (Android)",
+    description:
+      currentLocale == "en"
+        ? "Relive the classic Snake with 3D style and more. Compete for your record! Made with Jetpack Compose, MVVM, Hilt, Version Catalog, Firebase, Credentials, Google Sign in, Clean Architecture, and more."
+        : currentLocale == "es"
+          ? "Revive el clásico Snake con estilo 3D y más. ¡Compite por tu récord!. Hecho con Jetpack Compose, MVVM, Hilt, Version Catalog, Firebase, Credentials, Google Sign in, Clean Architecture y más."
+          : "",
+    link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.supersnakegame",
+    github: "https://github.com/FeryaelJustice/SuperSnakeGame",
+    image: "/projects/supersnakegame.webp",
+    tags: [TAGS.ANDROID, TAGS.KOTLIN],
+  },
+  {
     title: "Super News App (Android)",
     description:
       currentLocale == "en"
