@@ -53,6 +53,19 @@ const TAGS = {
 };
 const PROJECTS = [
   {
+    title: "MiraiLink (Android)",
+    description:
+      currentLocale == "en"
+        ? "MiraiLink is the social app designed for anime and video game fans. Made with its own backend in ExpressJS, Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture, and more."
+        : currentLocale == "es"
+          ? "MiraiLink es la app social pensada para fans del anime y los videojuegos. Hecho con propio backend en ExpressJS, Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture y más."
+          : "",
+    link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.mirailink",
+    github: "https://github.com/FeryaelJustice/MiraiLink",
+    image: "/projects/mirailink.webp",
+    tags: [TAGS.ANDROID, TAGS.KOTLIN],
+  },
+  {
     title: "Super Snake Game (Android)",
     description:
       currentLocale == "en"
@@ -86,7 +99,7 @@ const PROJECTS = [
         : currentLocale == "es"
           ? "(NECESITA VPS PARA FUNCIONALIDAD DE BACKEND Y DB) Sitio web de hotel (en React y Express JS) con servicios adicionales para la complejidad de implementar una API meteorológica que te indica, en función del clima local, cuando haces la reserva, si puedes reservar o no."
           : "",
-    link: "https://blanchedalmond-shark-422521.hostingersite.com/",
+    link: "https://darkseagreen-octopus-728733.hostingersite.com/",
     github: "https://github.com/FeryaelJustice/HotelAuraDeMallorca",
     image: "/projects/hotelaurademallorca.webp",
     tags: [TAGS.REACTICON, TAGS.JSIcon],
