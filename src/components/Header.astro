@@ -171,17 +171,19 @@ id="header"
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
-
-  nav {
-    @apply dark:bg-gray-800/90 bg-[#1C1C1C];
-  }
-
+  
   @keyframes nav-shadown {
-    0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
-    }
-    to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
-    }
+  0% {
+    background-color: rgb(255 255 255 / 0); /* equivalente a bg-white/0 */
+  }
+  to {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+                0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+    backdrop-filter: blur(8px); /* backdrop-blur */
+    --tw-ring-color: rgb(255 255 255 / 0.1); /* ring-white/10 */
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+                var(--tw-ring-shadow, 0 0 #0000),
+                var(--tw-shadow); /* ring + shadow combined */
+  }
   }
 </style>
