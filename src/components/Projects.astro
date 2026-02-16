@@ -11,204 +11,259 @@ import Android from "./icons/Android.astro";
 import Kotlin from "./icons/Kotlin.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import Swift from "./icons/Swift.astro";
 
 import { getLangFromUrl } from "@i18n/utils";
 const currentLocale = getLangFromUrl(Astro.url);
 
 const TAGS = {
-  JSIcon: {
-    name: "JS",
-    class: "bg-black text-white",
-    icon: JSIcon,
-  },
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  REACTICON: {
-    name: "React",
-    class: "bg-[#003159] text-white",
-    icon: ReactIcon,
-  },
-  ASTROICON: {
-    name: "Astro",
-    class: "bg-[#003159] text-white",
-    icon: AstroIcon,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: TailwindCSS,
-  },
-  ANDROID: {
-    name: "Android",
-    class: "bg-[#003159] text-white",
-    icon: Android,
-  },
-  KOTLIN: {
-    name: "Kotlin",
-    class: "bg-[#003159] text-white",
-    icon: Kotlin,
-  },
-  EXPRESJS: {
-    name: "ExpressJS",
-    class: "bg-[#003159] text-white",
-    icon: ExpressJSIcon,
-  },
+    JSIcon: {
+        name: "JS",
+        class: "bg-black text-white",
+        icon: JSIcon,
+    },
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJS,
+    },
+    REACTICON: {
+        name: "React",
+        class: "bg-[#003159] text-white",
+        icon: ReactIcon,
+    },
+    ASTROICON: {
+        name: "Astro",
+        class: "bg-[#003159] text-white",
+        icon: AstroIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        class: "bg-[#003159] text-white",
+        icon: TailwindCSS,
+    },
+    ANDROID: {
+        name: "Android",
+        class: "bg-[#003159] text-white",
+        icon: Android,
+    },
+    KOTLIN: {
+        name: "Kotlin",
+        class: "bg-[#003159] text-white",
+        icon: Kotlin,
+    },
+    EXPRESJS: {
+        name: "ExpressJS",
+        class: "bg-[#003159] text-white",
+        icon: ExpressJSIcon,
+    },
+    SWIFT: {
+        name: "Swift",
+        class: "bg-[#003159] text-white",
+        icon: Swift,
+    },
 };
 const PROJECTS = [
-  {
-    title: "MiraiLink (Android)",
-    description:
-      currentLocale == "en"
-        ? "MiraiLink is the social app designed for anime and video game fans. Made with its own backend in ExpressJS, Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture, and more."
-        : currentLocale == "es"
-          ? "MiraiLink es la app social pensada para fans del anime y los videojuegos. Hecho con propio backend en ExpressJS, Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture y más."
-          : "",
-    link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.mirailink",
-    github: "https://github.com/FeryaelJustice/MiraiLink",
-    image: "/projects/mirailink.webp",
-    tags: [TAGS.ANDROID, TAGS.KOTLIN],
-  },
-  {
-    title: "Super Snake Game (Android)",
-    description:
-      currentLocale == "en"
-        ? "Relive the classic Snake with 3D style and more. Compete for your record! Made with Jetpack Compose, MVVM, Hilt, Version Catalog, Firebase, Credentials, Google Sign in, Clean Architecture, and more."
-        : currentLocale == "es"
-          ? "Revive el clásico Snake con estilo 3D y más. ¡Compite por tu récord!. Hecho con Jetpack Compose, MVVM, Hilt, Version Catalog, Firebase, Credentials, Google Sign in, Clean Architecture y más."
-          : "",
-    link: "",
-    github: "https://github.com/FeryaelJustice/SuperSnakeGame",
-    image: "/projects/supersnakegame.webp",
-    tags: [TAGS.ANDROID, TAGS.KOTLIN],
-  },
-  {
-    title: "Super News App (Android)",
-    description:
-      currentLocale == "en"
-        ? "Your favourite news app made with Jetpack Compose, MVVM, Hilt, Version Catalog, SOLID, Retrofit (API Calls) and more."
-        : currentLocale == "es"
-          ? "Tu aplicación de noticias favorita creada con Jetpack Compose, MVVM, Hilt, Version Catalog, SOLID, Retrofit (llamadas API) y más."
-          : "",
-    link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.supernewsapp",
-    github: "https://github.com/FeryaelJustice/SuperNewsApp",
-    image: "/projects/supernewsapp.webp",
-    tags: [TAGS.ANDROID, TAGS.KOTLIN],
-  },
-  {
-    title: "Vince Pro Shop",
-    description:
-      currentLocale == "en"
-        ? "Fullstack e-commerce website for a billiards store. All on top of NodeJS is made with React (NextJS) and Express JS, nodemailer for emails, MySQL for the database, VPS with Debian for the server and Git for version control. It has full CI but manual CD. Security is applied with JWT and bcrypt for password hashing. It also has a custom admin panel to manage products, orders, users and more. It uses Stripe for payments, with a custom integration for the checkout process."
-        : currentLocale == "es"
-          ? "Sitio web de comercio electrónico fullstack para una tienda de billar. Todo sobre NodeJS está hecho con React (NextJS) y Express JS, nodemailer para correos electrónicos, MySQL para la base de datos, VPS con Debian para el servidor y Git para el control de versiones. Tiene CI completo pero CD manual. La seguridad se aplica con JWT y bcrypt para el hash de contraseñas. También tiene un panel de administración personalizado para administrar productos, pedidos, usuarios y más. Utiliza Stripe para los pagos, con una integración personalizada para el proceso de pago."
-          : "",
-    link: "https://vinceproshop.com/",
-    github: "#",
-    image: "/projects/vinceproshop.webp",
-    tags: [TAGS.NEXT, TAGS.REACTICON, TAGS.TAILWIND, TAGS.JSIcon, TAGS.EXPRESJS],
-  },
-  {
-    title: "Hotel Aura de Mallorca",
-    description:
-      currentLocale == "en"
-        ? "(NEEDS VPS FOR BACKEND AND DB FUNCTIONALITY) Hotel website (in React and Express JS) with extra services for the complexity of implementing a weather API that tells you based on the local weather when you book if you can book or not."
-        : currentLocale == "es"
-          ? "(NECESITA VPS PARA FUNCIONALIDAD DE BACKEND Y DB) Sitio web de hotel (en React y Express JS) con servicios adicionales para la complejidad de implementar una API meteorológica que te indica, en función del clima local, cuando haces la reserva, si puedes reservar o no."
-          : "",
-    link: "https://darkseagreen-octopus-728733.hostingersite.com/",
-    github: "https://github.com/FeryaelJustice/HotelAuraDeMallorca",
-    image: "/projects/hotelaurademallorca.webp",
-    tags: [TAGS.REACTICON, TAGS.JSIcon],
-  },
-  {
-    title: "Feryael Dev (Dev Youtuber)",
-    description:
-      currentLocale == "en"
-        ? "Programming channel showcasing Mobile projects and knowledge about different Android topics."
-        : currentLocale == "es"
-          ? "Canal de programación exhibiendo proyectos móviles y conocimiento sobre diferentes temas de Android."
-          : "",
-    link: "https://www.youtube.com/@feryaeldev",
-    image: "/projects/feryaeldev.webp",
-  },
-  // {
-  //   title: "Portfolio",
-  //   description:
-  //     currentLocale == "en"
-  //       ? "Professional Portfolio of Feryael Justice, showcasing his projects, experience and best achievements."
-  //       : currentLocale == "es"
-  //         ? "Portafolio Profesional de Feryael Justice, mostrando sus proyectos, experiencia y mejores logros."
-  //         : "",
-  //   link: "https://feryaeljustice.dev/",
-  //   github: "https://github.com/feryaeljustice/portfolio.dev",
-  //   image: "/projects/portfolio.webp",
-  //   tags: [TAGS.TAILWIND, TAGS.ASTROICON],
-  // },
+    {
+        title: "Vince Pro Shop (Web Fullstack)",
+        description:
+            currentLocale == "en"
+                ? "Fullstack e-commerce website for a billiards store. All on top of NodeJS is made with React (NextJS) and Express JS, nodemailer for emails, MySQL for the database, VPS with Debian for the server and Git for version control. It has full CI but manual CD. Security is applied with JWT and bcrypt for password hashing. It also has a custom admin panel to manage products, orders, users and more. It uses Stripe for payments, with a custom integration for the checkout process."
+                : currentLocale == "es"
+                  ? "Sitio web de comercio electrónico fullstack para una tienda de billar. Todo sobre NodeJS está hecho con React (NextJS) y Express JS, nodemailer para correos electrónicos, MySQL para la base de datos, VPS con Debian para el servidor y Git para el control de versiones. Tiene CI completo pero CD manual. La seguridad se aplica con JWT y bcrypt para el hash de contraseñas. También tiene un panel de administración personalizado para administrar productos, pedidos, usuarios y más. Utiliza Stripe para los pagos, con una integración personalizada para el proceso de pago."
+                  : "",
+        link: "https://vinceproshop.com/",
+        secondaryLink: "",
+        github: "#",
+        image: "/projects/vinceproshop.webp",
+        tags: [
+            TAGS.JSIcon,
+            TAGS.REACTICON,
+            TAGS.NEXT,
+            TAGS.TAILWIND,
+            TAGS.EXPRESJS,
+        ],
+    },
+    {
+        title: "Vince Pro Shop (Mobile: iOS & Android)",
+        description:
+            currentLocale == "en"
+                ? "KMP (Kotlin Multiplatform with Compose Multiplatform) for the mobile app of the e-commerce website: Vince Pro Shop. It produces the iOS and Android app (with clean practices: Koin, SQLDelight, CredentialManager, Keychain, Ktor, Room, imagepickerkmp, Datastore, Kotlin Serialization, Corutines, Material 3, Stripe)."
+                : currentLocale == "es"
+                  ? "KMP (Kotlin Multiplatform with Compose Multiplatform) para la app móvil del sitio web de comercio electrónico: Vince Pro Shop. Se produce la aplicación iOS y Android (con prácticas limpias: Koin, SQLDelight, CredentialManager, Keychain, Ktor, Room, imagepickerkmp, Datastore, Kotlin Serialization, Corutines, Material 3, Stripe)."
+                  : "",
+        link: "https://play.google.com/store/apps",
+        secondaryLink: "https://www.apple.com/es/app-store/",
+        github: "#",
+        image: "/projects/vinceproshop_mobile.webp",
+        tags: [TAGS.KOTLIN, TAGS.SWIFT],
+    },
+    {
+        title: "MiraiLink (Android)",
+        description:
+            currentLocale == "en"
+                ? "MiraiLink is the social app designed for anime and video game fans. Made with its own backend in ExpressJS, Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture, and more."
+                : currentLocale == "es"
+                  ? "MiraiLink es la app social pensada para fans del anime y los videojuegos. Hecho con propio backend en ExpressJS, Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture y más."
+                  : "",
+        link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.mirailink",
+        secondaryLink: "",
+        github: "https://github.com/FeryaelJustice/MiraiLink",
+        image: "/projects/mirailink.webp",
+        tags: [TAGS.ANDROID, TAGS.KOTLIN],
+    },
+    {
+        title: "Compound Interest Master (Android)",
+        description:
+            currentLocale == "en"
+                ? "Compound Interest Master is the app that helps you understand and calculate compound interest in a simple way. Made with Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture, StateFlow, Compose & Hilt & Unit Testing, Coroutines, Material 3 and Vico (patrykandpatrick for charts)."
+                : currentLocale == "es"
+                  ? "Interés Compuesto Calculadora es la app que te ayuda a entender y calcular el interés compuesto de forma sencilla. Hecha con Jetpack Compose, MVVM, Hilt, Version Catalog, Clean Architecture, StateFlow, Compose & Hilt & Unit Testing, Coroutines y Material 3 y Vico (patrykandpatrick para las gráficas)."
+                  : "",
+        link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.compoundinterestmaster",
+        secondaryLink: "",
+        github: "https://github.com/FeryaelJustice/CompoundInterestMaster",
+        image: "/projects/compoundinterestmaster.webp",
+        tags: [TAGS.ANDROID, TAGS.KOTLIN],
+    },
+    {
+        title: "Super Snake Game (Android)",
+        description:
+            currentLocale == "en"
+                ? "Relive the classic Snake with 2D style and more. Compete for your record! Made with Jetpack Compose, MVVM, Hilt, Version Catalog, Firebase, Credentials, Google Sign in, Clean Architecture, and more."
+                : currentLocale == "es"
+                  ? "Revive el clásico Snake con estilo 2D y más. ¡Compite por tu récord!. Hecho con Jetpack Compose, MVVM, Hilt, Version Catalog, Firebase, Credentials, Google Sign in, Clean Architecture y más."
+                  : "",
+        link: "",
+        secondaryLink: "",
+        github: "https://github.com/FeryaelJustice/SuperSnakeGame",
+        image: "/projects/supersnakegame.webp",
+        tags: [TAGS.ANDROID, TAGS.KOTLIN],
+    },
+    {
+        title: "Super News App (Android)",
+        description:
+            currentLocale == "en"
+                ? "Your favourite news app made with Jetpack Compose, MVVM, Hilt, Version Catalog, SOLID, Retrofit (API Calls) and more."
+                : currentLocale == "es"
+                  ? "Tu aplicación de noticias favorita creada con Jetpack Compose, MVVM, Hilt, Version Catalog, SOLID, Retrofit (llamadas API) y más."
+                  : "",
+        link: "https://play.google.com/store/apps/details?id=com.feryaeljustice.supernewsapp",
+        secondaryLink: "",
+        github: "https://github.com/FeryaelJustice/SuperNewsApp",
+        image: "/projects/supernewsapp.webp",
+        tags: [TAGS.ANDROID, TAGS.KOTLIN],
+    },
+    {
+        title: "Hotel Aura de Mallorca",
+        description:
+            currentLocale == "en"
+                ? "Hotel website (in React and Express JS) with extra services for the complexity of implementing a weather API that tells you based on the local weather when you book if you can book or not. It uses Axios, Qrcode React, React boostrap, React Calendar, React Icons, React Parallax, React i18next & i18next only, react google recaptch, sharpt, svgo, sweetalert2, fortawesome, cryptography, speakeasy (for gen. of a code), socket, qrcode, multer, nodemailer, helmet, etc."
+                : currentLocale == "es"
+                  ? "Sitio web de hotel (en React y Express JS) con servicios adicionales como una API meteorológica que te indica (en función del clima local) cuándo haces la reserva y si puedes reservar o no. Se utiliza Axios, Qrcode React, React boostrap, React Calendar, React Icons, React Parallax, React i18next & i18next solo, react google recaptch, sharpt, svgo, sweetalert2, fortawesome, criptografía, speakeasy (para gen. de un código), socket, qrcode, multer, nodemailer, helmet, etc."
+                  : "",
+        link: "https://darkseagreen-octopus-728733.hostingersite.com/",
+        secondaryLink: "",
+        github: "https://github.com/FeryaelJustice/HotelAuraDeMallorca",
+        image: "/projects/hotelaurademallorca.webp",
+        tags: [TAGS.REACTICON, TAGS.JSIcon],
+    },
+    {
+        title: "Feryael Dev (Youtube)",
+        description:
+            currentLocale == "en"
+                ? "Programming channel showcasing Mobile projects and knowledge about different Android topics."
+                : currentLocale == "es"
+                  ? "Canal de programación exhibiendo proyectos móviles y conocimiento sobre diferentes temas de Android."
+                  : "",
+        link: "https://www.youtube.com/@feryaeldev",
+        secondaryLink: "",
+        image: "/projects/feryaeldev.webp",
+    },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <Image
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              src={image}
-              alt={`Screenshot of project ${image}`}
-              width="300"
-              height="200"
-              loading="lazy"
-            />
-          </div>
-        </div>
+    {
+        PROJECTS.map(
+            ({
+                image,
+                title,
+                description,
+                tags,
+                link,
+                secondaryLink,
+                github,
+            }) => (
+                <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+                    <div class="w-full md:w-1/2">
+                        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                            <Image
+                                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                                src={image}
+                                alt={`Screenshot of project ${image}`}
+                                width="300"
+                                height="200"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-100">{title}</h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags?.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+                    <div class="w-full md:w-1/2 md:max-w-lg">
+                        <h3 class="text-2xl font-bold text-gray-100">
+                            {title}
+                        </h3>
+                        <div class="flex flex-wrap mt-2">
+                            <ul class="flex flex-row mb-2 gap-x-2">
+                                {tags?.map((tag) => (
+                                    <li>
+                                        <span
+                                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                                        >
+                                            <tag.icon class="size-4" />
+                                            {tag.name}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
 
-            <div class="mt-2 text-gray-400">{description}</div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <Github class="size-6" />
-                  {currentLocale == "en"
-                    ? "Code"
-                    : currentLocale == "es"
-                      ? "Código"
-                      : ""}
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  {currentLocale == "en"
-                    ? "Preview"
-                    : currentLocale == "es"
-                      ? "Previsualización"
-                      : ""}
-                </LinkButton>
-              )}
-            </footer>
-          </div>
-        </div>
-      </article>
-    ))
-  }
+                            <div class="mt-2 text-gray-400">{description}</div>
+                            <footer class="flex items-end justify-start mt-4 gap-x-4">
+                                {github && (
+                                    <LinkButton href={github}>
+                                        <Github class="size-6" />
+                                        {currentLocale == "en"
+                                            ? "Code"
+                                            : currentLocale == "es"
+                                              ? "Código"
+                                              : ""}
+                                    </LinkButton>
+                                )}
+                                {link && (
+                                    <LinkButton href={link}>
+                                        <Link class="size-4" />
+                                        {currentLocale == "en"
+                                            ? "Prev."
+                                            : currentLocale == "es"
+                                              ? "Prev."
+                                              : ""}
+                                    </LinkButton>
+                                )}
+                                {secondaryLink && (
+                                    <LinkButton href={secondaryLink}>
+                                        <Link class="size-4" />
+                                        {currentLocale == "en"
+                                            ? "Prev. (2)"
+                                            : currentLocale == "es"
+                                              ? "Prev. (2)"
+                                              : ""}
+                                    </LinkButton>
+                                )}
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+            ),
+        )
+    }
 </div>
