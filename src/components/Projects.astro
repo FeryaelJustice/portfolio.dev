@@ -12,6 +12,7 @@ import Kotlin from "./icons/Kotlin.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import Swift from "./icons/Swift.astro";
+import AIIcon from "./icons/AIIcon.astro";
 
 import { getLangFromUrl } from "@i18n/utils";
 const currentLocale = getLangFromUrl(Astro.url);
@@ -62,15 +63,20 @@ const TAGS = {
         class: "bg-[#003159] text-white",
         icon: Swift,
     },
+    AI: {
+        name: "AI",
+        class: "bg-[#003159] text-white",
+        icon: AIIcon,
+    },
 };
 const PROJECTS = [
     {
         title: "Vince Pro Shop (Web Fullstack)",
         description:
             currentLocale == "en"
-                ? "Fullstack e-commerce website for a billiards store. All on top of NodeJS is made with React (NextJS) and Express JS, nodemailer for emails, MySQL for the database, VPS with Debian for the server and Git for version control. It has full CI but manual CD. Security is applied with JWT and bcrypt for password hashing. It also has a custom admin panel to manage products, orders, users and more. It uses Stripe for payments, with a custom integration for the checkout process."
+                ? "Fullstack e-commerce website for a billiards store. All on top of NodeJS is made with React (NextJS) and Express JS, nodemailer for emails, MySQL for the database, VPS with Debian for the server and Git for version control. It has full CI but manual CD. Security is applied with JWT and bcrypt for password hashing. It also has a custom admin panel to manage products, orders, users and more. It uses Stripe for payments, with a custom integration for the checkout process. Includes AI chatbot, product suggestions goes with Machine Learning on back."
                 : currentLocale == "es"
-                  ? "Sitio web de comercio electrónico fullstack para una tienda de billar. Todo sobre NodeJS está hecho con React (NextJS) y Express JS, nodemailer para correos electrónicos, MySQL para la base de datos, VPS con Debian para el servidor y Git para el control de versiones. Tiene CI completo pero CD manual. La seguridad se aplica con JWT y bcrypt para el hash de contraseñas. También tiene un panel de administración personalizado para administrar productos, pedidos, usuarios y más. Utiliza Stripe para los pagos, con una integración personalizada para el proceso de pago."
+                  ? "Sitio web de comercio electrónico fullstack para una tienda de billar. Todo sobre NodeJS está hecho con React (NextJS) y Express JS, nodemailer para correos electrónicos, MySQL para la base de datos, VPS con Debian para el servidor y Git para el control de versiones. Tiene CI completo pero CD manual. La seguridad se aplica con JWT y bcrypt para el hash de contraseñas. También tiene un panel de administración personalizado para administrar productos, pedidos, usuarios y más. Utiliza Stripe para los pagos, con una integración personalizada para el proceso de pago.  Incluye chatbot de IA, sugerencias de productos con Machine Learning en el back."
                   : "",
         link: "https://vinceproshop.com/",
         secondaryLink: "",
@@ -82,6 +88,7 @@ const PROJECTS = [
             TAGS.NEXT,
             TAGS.TAILWIND,
             TAGS.EXPRESJS,
+            TAGS.AI,
         ],
     },
     {
