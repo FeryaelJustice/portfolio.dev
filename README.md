@@ -1,4 +1,4 @@
-# 🔥 FeryaelJustice.dev – Developer Portfolio
+# 🔥 FeryaelJustice.dev - Developer Portfolio (old, not in use)
 
 Welcome to the source code for my personal portfolio website, built with [Astro](https://astro.build/)! This site showcases my skills, experience, and projects as a software developer.
 
